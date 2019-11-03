@@ -62,6 +62,8 @@ Array.from(document.getElementById('mw-content-text').children)
 		}
 	)
 	.results
+	// Fixing typo on page
+	.map(item => { if (item.name === 'Smörgsbord') { item.name = 'Smörgåsbord'; } return item; })
 
 // You recieve collection of that objects:
 /*
