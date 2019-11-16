@@ -17,7 +17,7 @@ Array
 
 		return {
 			name: achievmentColumn.querySelector('div > div > div').innerText.trim(),
-			description: achievmentColumn.querySelector('div > div:nth-child(2)').innerText.trim(),
+			description: achievmentColumn.querySelector('div > div > div:nth-child(2)').innerText.trim(),
 			elementId: achievmentColumn.querySelector('span[id]').id,
 			startingConditions: tr.querySelector('td:nth-child(2)').innerText.trim().replace(/\s+/g, ' '),
 			requirements: tr.querySelector('td:nth-child(3)').innerText.trim().replace(/\s+/g, ' '),
