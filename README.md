@@ -1,2 +1,3 @@
-# achievements-tools
-A various tools for managin achievements on Steam
+# Achievements Tools
+
+A various helper tools for managing achievements on Steam.
