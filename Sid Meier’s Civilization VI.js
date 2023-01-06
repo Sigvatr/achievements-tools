@@ -42,7 +42,7 @@ Array.from(document.getElementsByClassName('subSection'))
 // Getting achievment list with DLC which is used by it
 // https://civilization.fandom.com/wiki/Steam_achievements_in_Civ6
 
-Array.from(document.getElementById('mw-content-text').children)
+Array.from(document.getElementsByClassName('mw-parser-output')[0].children)
 	.reduce(
 		function(actual, item) {
 			if (item.nodeName === 'TABLE' && item.className === "steam-achievement-container") {
@@ -71,8 +71,6 @@ Array.from(document.getElementById('mw-content-text').children)
 		}
 	)
 	.results
-	// Fixing typo on page
-	.map(item => { if (item.name === 'Smörgsbord') { item.name = 'Smörgåsbord'; } return item; })
 
 // You recieve collection of that objects:
 /*
