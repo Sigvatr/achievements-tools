@@ -10,6 +10,14 @@ Array.from(document.getElementsByClassName('subSection'))
 	.reduce(
 		(result, subSection) => result.concat(
 			Array.from(subSection.element.getElementsByTagName('u'))
+				.filter(e => {
+					// skipping all <u><b>, which don't have <br/> before, 
+					if (!e.previousSibling) {
+						e = e.parentElement;
+					}
+
+					return e.previousSibling.tagName == 'BR'
+				})
 				.map(e => ({
 					game: subSection.title
 						.replace(/ achievements|- part \d+/g, '')
@@ -19,6 +27,7 @@ Array.from(document.getElementsByClassName('subSection'))
 		),
 		[]
 	);
+
 
 // You recieve collection of that objects:​
 /*
